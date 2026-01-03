@@ -1,69 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Street Fighter II Turbo (DOS)</title>
+  <meta charset="UTF-8" />
+  <title>Street Fighter II Turbo - DOS</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- js-dos oficial -->
+  <link rel="stylesheet" href="https://v8.js-dos.com/latest/js-dos.css">
+  <script src="https://v8.js-dos.com/latest/js-dos.js"></script>
 
   <style>
-    html, body {
+    body {
       margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
       background: black;
-      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: white;
+      font-family: Arial, sans-serif;
     }
 
     #dos {
-      width: 100%;
-      height: 100%;
+      width: 800px;
+      height: 600px;
+      border: 2px solid #444;
     }
 
     #loading {
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: white;
-      font-family: Arial, sans-serif;
+      top: 20px;
+      text-align: center;
+      width: 100%;
       font-size: 18px;
-      z-index: 10;
     }
   </style>
-
-  <!-- js-dos 7 (CDN correto) -->
-  <script src="https://cdn.jsdelivr.net/npm/js-dos@7.4.3/dist/js-dos.js"></script>
 </head>
-
 <body>
+
   <div id="loading">Carregando Street Fighter II Turbo…</div>
   <div id="dos"></div>
 
   <script>
-    Dos(document.getElementById("dos"), {
-      url: "/sf2t.zip",
-      kiosk: true,
-      scale: 2,
-
-      onReady: (fs, main) => {
-        console.log("DOSBox pronto");
-
-        document.getElementById("loading").remove();
-
-        // Executa explicitamente o jogo
-        main.run([
-          "SF2TURBO.EXE"
-        ]);
-      },
-
-      onError: (err) => {
-        console.error("Erro no js-dos:", err);
-        document.getElementById("loading").innerText =
-          "Erro ao carregar o jogo. Veja o console.";
-      }
-    });
+    window.onload = () => {
+      Dos(document.getElementById("dos"), {
+        url: "sf2t.zip",
+        autoStart: true,
+        kiosk: true
+      });
+    };
   </script>
+
 </body>
 </html>
