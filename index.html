@@ -29,15 +29,16 @@
       color: white;
       font-family: Arial, sans-serif;
       font-size: 18px;
+      z-index: 10;
     }
   </style>
 
-  <!-- js-dos 7 (CDN que já inclui wasm corretamente) -->
+  <!-- js-dos 7 -->
   <script src="https://cdn.jsdelivr.net/npm/js-dos@7.4.3/dist/js-dos.js"></script>
 </head>
 
 <body>
-  <div id="loading">Carregando SF2 Turbo…</div>
+  <div id="loading">Carregando Street Fighter II Turbo…</div>
   <div id="dos"></div>
 
   <script>
@@ -45,9 +46,11 @@
       url: "/sf2t.zip",
       autoStart: true,
       kiosk: true,
-      scale: 2
-    }).then(() => {
-      document.getElementById("loading").remove();
+      scale: 2,
+      onload: () => {
+        document.getElementById("loading").remove();
+        console.log("SF2 Turbo carregado com sucesso");
+      }
     });
   </script>
 </body>
