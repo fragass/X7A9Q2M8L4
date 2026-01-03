@@ -33,7 +33,7 @@
     }
   </style>
 
-  <!-- js-dos 7 -->
+  <!-- js-dos 7 (CDN correto) -->
   <script src="https://cdn.jsdelivr.net/npm/js-dos@7.4.3/dist/js-dos.js"></script>
 </head>
 
@@ -44,12 +44,24 @@
   <script>
     Dos(document.getElementById("dos"), {
       url: "/sf2t.zip",
-      autoStart: true,
       kiosk: true,
       scale: 2,
-      onload: () => {
+
+      onReady: (fs, main) => {
+        console.log("DOSBox pronto");
+
         document.getElementById("loading").remove();
-        console.log("SF2 Turbo carregado com sucesso");
+
+        // Executa explicitamente o jogo
+        main.run([
+          "SF2TURBO.EXE"
+        ]);
+      },
+
+      onError: (err) => {
+        console.error("Erro no js-dos:", err);
+        document.getElementById("loading").innerText =
+          "Erro ao carregar o jogo. Veja o console.";
       }
     });
   </script>
