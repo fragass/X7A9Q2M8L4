@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
+<meta charset="UTF-8">
 <title>Street Fighter II Turbo (DOS)</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 html, body {
@@ -31,7 +31,6 @@ html, body {
 }
 </style>
 
-<!-- js-dos 8.x -->
 <script src="https://cdn.jsdelivr.net/npm/js-dos@8.3.15/dist/js-dos.js"></script>
 </head>
 <body>
@@ -42,11 +41,11 @@ html, body {
 <script>
 (async () => {
 	try {
-		const dos = new Dos(document.getElementById("dos"));
+		const dos = Dos(document.getElementById("dos"));
 		await dos.run("sf2t.zip");
 		document.getElementById("loading").remove();
-	} catch (err) {
-		console.error(err);
+	} catch (e) {
+		console.error(e);
 		document.getElementById("loading").innerText =
 			"Erro ao carregar o jogo. Veja o console (F12).";
 	}
