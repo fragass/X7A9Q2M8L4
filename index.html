@@ -28,6 +28,7 @@ html, body {
 	color: white;
 	font-family: monospace;
 	font-size: 16px;
+	z-index: 10;
 }
 </style>
 
@@ -39,17 +40,18 @@ html, body {
 <div id="dos"></div>
 
 <script>
-(async () => {
-	try {
-		const dos = Dos(document.getElementById("dos"));
-		await dos.run("sf2t.zip");
+Dos(document.getElementById("dos"), {
+	url: "sf2t.zip",
+	autoStart: true,
+	onload: () => {
 		document.getElementById("loading").remove();
-	} catch (e) {
+	},
+	onerror: (e) => {
 		console.error(e);
 		document.getElementById("loading").innerText =
 			"Erro ao carregar o jogo. Veja o console (F12).";
 	}
-})();
+});
 </script>
 
 </body>
