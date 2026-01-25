@@ -8,6 +8,12 @@ const fecharPopup = document.getElementById("fecharPopup")
 
 async function carregarTickets() {
   const res = await fetch("/api/tickets")
+
+  if (!res.ok) {
+    console.error("Erro ao buscar tickets")
+    return
+  }
+
   const data = await res.json()
 
   container.innerHTML = ""
@@ -29,3 +35,17 @@ async function carregarTickets() {
       popupTipo.textContent = t.tipo.toUpperCase()
       popupTipo.className = `ticket-tipo ${t.tipo}`
       popupConteudo.textContent = t.episodio || t.descricao
+      popup.classList.add("show")
+    })
+
+    container.appendChild(card)
+  })
+}
+
+fecharPopup.onclick = () => popup.classList.remove("show")
+
+popup.onclick = e => {
+  if (e.target === popup) popup.classList.remove("show")
+}
+
+carregarTickets()
