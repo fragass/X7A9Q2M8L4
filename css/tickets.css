@@ -158,3 +158,54 @@ h1 {
   cursor: pointer;
   box-shadow: 0 0 16px rgba(56,189,248,.5);
 }
+/* MINI PROFILE */
+#mini-profile {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+  border: none;
+}
+
+/* SETA */
+#arrow {
+  transition: transform 0.3s;
+}
+
+/* DROPDOWN */
+#dropdown-menu {
+  display: none;
+  position: fixed;
+  top: 44px;
+  right: 10px;
+  background: rgba(0,0,0,0.9);
+  border-radius: 6px;
+  padding: 6px 10px;
+  z-index: 1000;
+}
+
+#dropdown-menu button {
+  background: #ff4d4d;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  width: 100%;
+}
+
+#dropdown-menu button:hover {
+  background: #e60000;
+}
+
+
