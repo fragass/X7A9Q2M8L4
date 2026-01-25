@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  background: #0f1115;
+  color: #e5e7eb;
+}
+
+.voltar {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: white;
+  color: black;
+  padding: 6px 12px;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+select, input, textarea, button {
+  width: 100%;
+  padding: 12px;
+  background: #1c1f26;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  margin-top: 12px;
+}
+
+button {
+  background: #2563eb;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-box {
+  background: #1c1f26;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.tickets {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 220px;
+  background: #1c1f26;
+  padding: 15px;
+  border-radius: 12px;
+  position: relative;
+}
+
+.card span {
+  font-weight: bold;
+}
+
+.report {
+  color: #ef4444;
+}
+
+.solicitar {
+  color: #22c55e;
+}
+
+.expandir {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: #2563eb;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+}
