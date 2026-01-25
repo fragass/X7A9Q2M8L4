@@ -5,11 +5,14 @@
   font-family: "Inter", system-ui, sans-serif;
 }
 
-body,html {
+html {
+  overflow: hidden;
+}
+
+body {
   min-height: 100vh;
   background: radial-gradient(circle at top, #0b0f16, #020409);
   color: #e5e7eb;
-  overflow: hidden;
 }
 
 /* CONTAINER */
@@ -208,6 +211,7 @@ h1 {
 #dropdown-menu button:hover {
   background: #e60000;
 }
+
 
 
 
