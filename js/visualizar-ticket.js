@@ -1,19 +1,10 @@
-const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || process.env.SUPABASE_URL
-const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || process.env.SUPABASE_ANON_KEY
-
 const container = document.getElementById("tickets")
 
-async function carregarTickets() {
-  const res = await fetch(`${SUPABASE_URL}/rest/v1/tickets?select=*`, {
-    headers: {
-      "apikey": SUPABASE_KEY,
-      "Authorization": `Bearer ${SUPABASE_KEY}`
-    }
-  })
+async function carregar() {
+  const res = await fetch("/api/tickets")
+  const data = await res.json()
 
-  const dados = await res.json()
-
-  dados.forEach(t => {
+  data.forEach(t => {
     const card = document.createElement("div")
     card.className = "card"
 
@@ -34,4 +25,4 @@ async function carregarTickets() {
   })
 }
 
-carregarTickets()
+carregar()
