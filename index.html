@@ -12,23 +12,23 @@
 <div class="container">
   <h1>Criar Ticket</h1>
 
-  <select id="tipo" required>
-    <option value="">Selecione</option>
-    <option value="reportar">Reportar</option>
-    <option value="solicitar">Solicitar</option>
-  </select>
+<select id="tipo" required>
+  <option value="">Selecione</option>
+  <option value="reportar">Reportar</option>
+  <option value="solicitar">Solicitar</option>
+</select>
 
-  <form id="form-reportar" class="hidden">
-    <input type="text" id="titulo" placeholder="Título" required>
-    <input type="text" id="episodio" placeholder="Episódio" required>
-    <button type="submit">ENVIAR</button>
-  </form>
+<form id="form-reportar" style="display:none;">
+  <input type="text" id="titulo" placeholder="Título" required>
+  <input type="text" id="episodio" placeholder="Episódio" required>
+  <button type="submit">ENVIAR</button>
+</form>
 
-  <form id="form-solicitar" class="hidden">
-    <input type="text" id="nome" placeholder="Seu nome" required>
-    <textarea id="descricao" placeholder="Descreva sua solicitação" required></textarea>
-    <button type="submit">ENVIAR</button>
-  </form>
+<form id="form-solicitar" style="display:none;">
+  <input type="text" id="nome" placeholder="Seu nome" required>
+  <textarea id="descricao" placeholder="Descreva sua solicitação" required></textarea>
+  <button type="submit">ENVIAR</button>
+</form>
 </div>
 
 <div id="popup" class="popup">
@@ -41,4 +41,5 @@
 <script src="js/criar-ticket.js"></script>
 </body>
 </html>
+
 
