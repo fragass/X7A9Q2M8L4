@@ -13,6 +13,9 @@ function formatarData(dataISO) {
 
   const d = new Date(dataISO);
 
+  // Ajuste para UTC-3
+  d.setHours(d.getHours() - 3);
+
   const dia = String(d.getDate()).padStart(2, "0");
   const mes = String(d.getMonth() + 1).padStart(2, "0");
   const ano = d.getFullYear();
@@ -75,3 +78,4 @@ popup.onclick = e => {
 };
 
 carregarTickets();
+
