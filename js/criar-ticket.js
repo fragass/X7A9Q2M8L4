@@ -1,5 +1,7 @@
-const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || process.env.SUPABASE_URL
-const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || process.env.SUPABASE_ANON_KEY
+document.addEventListener("DOMContentLoaded", () => {
+
+const SUPABASE_URL = process.env.SUPABASE_URL
+const SUPABASE_KEY = process.env.SUPABASE_ANON_KEY
 
 const tipo = document.getElementById("tipo")
 const formReportar = document.getElementById("form-reportar")
@@ -8,11 +10,11 @@ const popup = document.getElementById("popup")
 const ok = document.getElementById("ok")
 
 tipo.addEventListener("change", () => {
-  formReportar.classList.add("hidden")
-  formSolicitar.classList.add("hidden")
+  formReportar.style.display = "none"
+  formSolicitar.style.display = "none"
 
-  if (tipo.value === "reportar") formReportar.classList.remove("hidden")
-  if (tipo.value === "solicitar") formSolicitar.classList.remove("hidden")
+  if (tipo.value === "reportar") formReportar.style.display = "block"
+  if (tipo.value === "solicitar") formSolicitar.style.display = "block"
 })
 
 formReportar.addEventListener("submit", async e => {
@@ -23,7 +25,8 @@ formReportar.addEventListener("submit", async e => {
     headers: {
       "apikey": SUPABASE_KEY,
       "Authorization": `Bearer ${SUPABASE_KEY}`,
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
+      "Prefer": "return=minimal"
     },
     body: JSON.stringify({
       tipo: "reportar",
@@ -33,7 +36,7 @@ formReportar.addEventListener("submit", async e => {
   })
 
   formReportar.reset()
-  popup.classList.remove("hidden")
+  popup.classList.add("show")
 })
 
 formSolicitar.addEventListener("submit", async e => {
@@ -44,7 +47,8 @@ formSolicitar.addEventListener("submit", async e => {
     headers: {
       "apikey": SUPABASE_KEY,
       "Authorization": `Bearer ${SUPABASE_KEY}`,
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
+      "Prefer": "return=minimal"
     },
     body: JSON.stringify({
       tipo: "solicitar",
@@ -54,7 +58,11 @@ formSolicitar.addEventListener("submit", async e => {
   })
 
   formSolicitar.reset()
-  popup.classList.remove("hidden")
+  popup.classList.add("show")
 })
 
-ok.onclick = () => popup.classList.add("hidden")
+ok.addEventListener("click", () => {
+  popup.classList.remove("show")
+})
+
+})
