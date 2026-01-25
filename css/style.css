@@ -19,8 +19,10 @@ body {
 
 h1 {
   margin-bottom: 25px;
+  font-weight: 600;
 }
 
+/* LISTA */
 .tickets {
   display: flex;
   gap: 20px;
@@ -45,6 +47,9 @@ h1 {
   font-size: 15px;
   margin-top: 6px;
   color: #f1f5f9;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 /* TIPO */
@@ -84,7 +89,7 @@ h1 {
   display: none;
   align-items: center;
   justify-content: center;
-  z-index: 10;
+  z-index: 100;
 }
 
 .popup.show {
@@ -95,12 +100,17 @@ h1 {
   background: linear-gradient(180deg, #14171d, #0b0d12);
   padding: 30px;
   border-radius: 16px;
-  max-width: 400px;
+  max-width: 420px;
   width: 90%;
   box-shadow: 0 0 0 1px #1f2430, 0 30px 60px rgba(0,0,0,.8);
 }
 
 .popup-box h2 {
+  margin-bottom: 10px;
+}
+
+.popup-box span {
+  display: inline-block;
   margin-bottom: 10px;
 }
 
