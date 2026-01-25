@@ -9,6 +9,8 @@ const fecharPopup = document.getElementById("fecharPopup");
 container.innerHTML = "<p class='loading'>Carregando tickets...</p>";
 
 function formatarData(dataISO) {
+  if (!dataISO) return "Sem data";
+
   const d = new Date(dataISO);
 
   const dia = String(d.getDate()).padStart(2, "0");
@@ -24,7 +26,6 @@ function formatarData(dataISO) {
 async function carregarTickets() {
   try {
     const res = await fetch("/api/tickets");
-
     if (!res.ok) throw new Error("Erro ao buscar tickets");
 
     const data = await res.json();
