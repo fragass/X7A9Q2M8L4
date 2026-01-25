@@ -38,8 +38,24 @@ h1 {
   color: #f8fafc;
 }
 
-/* SELECT, INPUT, TEXTAREA */
-select,
+/* SELECT (CLARO) */
+select {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 14px;
+  padding: 14px;
+  margin-top: 14px;
+  color: #000000;
+  outline: none;
+  font-size: 14px;
+}
+
+option {
+  color: #000000;
+}
+
+/* INPUT E TEXTAREA (DARK) */
 input,
 textarea {
   width: 100%;
@@ -108,8 +124,9 @@ button:hover {
   width: 90%;
   max-width: 340px;
   text-align: center;
-  box-shadow: 0 0 0 1px rgba(255,255,255,.04),
-              0 25px 70px rgba(0,0,0,.9);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.04),
+    0 25px 70px rgba(0,0,0,.9);
 }
 
 .popup-box p {
