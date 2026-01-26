@@ -218,6 +218,11 @@ h1 {
   margin-top: 6px;
   text-align: center;
 }
+/* CORES POR TIPO */
+.ticket-tipo.reportar {
+  color: #fb7185; /* vermelho */
+}
+
 
 
 
