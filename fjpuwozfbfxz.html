@@ -41,8 +41,9 @@
   <option value="">Selecione</option>
   <option value="reportar">Reportar link fora do ar</option>
   <option value="solicitar">Solicitar adição de título</option>
+  <option value="erro">Erro no site</option> <!-- NOVO -->
 </select>
-
+  
 <form id="form-reportar" style="display:none;">
   <input type="text" id="titulo" placeholder="Título" required>
   <input type="text" id="episodio" placeholder="Episódio" required>
@@ -52,6 +53,11 @@
 <form id="form-solicitar" style="display:none;">
   <input type="text" id="nome" placeholder="Seu nome" required>
   <textarea id="descricao" placeholder="Descreva sua solicitação" required></textarea>
+  <button type="submit">ENVIAR</button>
+</form>
+
+  <form id="form-erro" style="display:none;">
+  <textarea id="erroDescricao" placeholder="Descreva o erro ocorrido" required></textarea>
   <button type="submit">ENVIAR</button>
 </form>
 </div>
@@ -66,6 +72,7 @@
 <script src="js/criar-ticket.js"></script>
 </body>
 </html>
+
 
 
 
