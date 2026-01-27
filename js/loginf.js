@@ -13,17 +13,10 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
   const result = await response.json();
 
   if (result.success) {
-    // cria token temporário de sessão
-    sessionStorage.setItem("auth", "true");
-
-    // salva o telefone do usuário logado
-    sessionStorage.setItem("loggedUserPhone", username);
-
-    // redireciona para a página do Tetris
-    window.location.href = "bdrgrzrutym9.html";
+    sessionStorage.setItem("token", result.token);
+    sessionStorage.setItem("loggedUser", result.user);
+    window.location.href = "bemtdxuljviyp.html";
   } else {
     document.getElementById("errorMsg").textContent = "Usuário ou senha inválidos!";
   }
 });
-
-
